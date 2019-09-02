@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianbo.demo5.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.qianbo.demo5.entity.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="usercode" jdbcType="VARCHAR" property="usercode" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="hiredate" jdbcType="TIMESTAMP" property="hiredate" />
+  </resultMap>
+</mapper>

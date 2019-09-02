@@ -1,14 +1,24 @@
-# 定时任务
+package com.qianbo.demo5.task;
 
-## 核心业务代码
+import com.qianbo.demo5.entity.Department;
+import com.qianbo.demo5.entity.User;
+import com.qianbo.demo5.service.UserService;
+import net.sf.jsqlparser.parser.ParseException;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
+import java.util.*;
 
+@Component
+@Configurable
+@EnableScheduling
 
-1.配置Springboot+Mybatis，本项目中使用了Mybatis Generator插件生成实体类，mapper文件。
-
-2.请求前端数据并定时执行
-
-```java
 public class TaskJob {
     @Autowired
     UserService userService;
@@ -56,39 +66,3 @@ public class TaskJob {
 
     }
 }
-```
-
-3.将请求的信息存入数据库
-
-```java
-public class UserService {
-
-
-    @Autowired
-
-    private Object User;
-
-    public void InsertUser(User user){
-        UserMapper.insert(User);
-    }
-    public User  GetUserByUsercode(Integer usercode){
-        User user  = new User();
-        user  = UserMapper.selectByUsercode(usercode);
-        return user;
-    }
-
-    public List<User> findUserByDate(String startTime, String lastTime){
-
-        List<User> employees= new ArrayList<>();
-        user = UserMapper.findUserByDate(startTime,lastTime);
-        return  employees;
-    }
-
-    public int selectIdByName(String Name){
-        return UserMapper.selectidByName(Name);
-    }
-```
-
-## 未实现的功能
-
-拓展联系
