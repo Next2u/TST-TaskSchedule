@@ -79,7 +79,7 @@ public class UserService {
 
     public List<User> findUserByDate(String startTime, String lastTime){
 
-        List<User> employees= new ArrayList<>();
+        List<User> user= new ArrayList<>();
         user = UserMapper.findUserByDate(startTime,lastTime);
         return  user;
     }
@@ -91,4 +91,5 @@ public class UserService {
 
 ## 未实现的功能
 
-拓展联系
+拓展练习
+
